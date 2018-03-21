@@ -565,11 +565,11 @@ echo \"Submitting dependent job\"\n"
     File.write(depend_line)
     profile_line    = "source {}\n".format(profile)
     File.write(profile_line)
-    run_line        = "python {}/python/RunTripleContextSlurm.py\n\n".format(proj_snapshot_base)
+    run_line        = "python {}/python/RunTripleContextTrain.py\n\n".format(proj_snapshot_base)
     File.write(run_line)
     
     print("**********************************************************************************************************************")
-    print("NOTE: Run me stand alone as: python {}/python/RunTripleContextSlurm.py".format(proj_snapshot_base))
+    print("NOTE: Run me stand alone as: python {}/python/RunTripleContextTrain.py".format(proj_snapshot_base))
     print("OR:   Run me as a batch as: msub --slurm {}".format(msub_file))
     print("**********************************************************************************************************************")
 

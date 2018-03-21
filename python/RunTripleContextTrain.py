@@ -57,15 +57,13 @@ def caffe_loop(gpus, uid, rank, avg_guys, proc_comm):
     global FINISH_EXIT
     
     # Where is this project located?
-    project_home                = '/g/g17/mundhetn/selfsupervised/'
+    project_home                = '/home/mundhenk/selfsupervised/'
     # Path to training image set  
-    path_prefix                 = '/usr/workspace/wsa/mundhetn/image_temp/patches_84h_110x110_13x13-blur-ab_compact/'
-    # You can also get the data here, but you should copy it to a faster location:
-    #path_prefix                 = '/p/lscratche/brainusr/datasets/ILSVRC2012/patches_84h_110x110_13x13-blur-ab_compact/'
+    path_prefix                 = '/home/mundhenk/images/patches_84h_110x110_13x13-blur-ab_compact/'
     
     # Condition is a label used for graphing, display purposes and saving snap shots
     # This can be any valid string, but must by file name friendly. 
-    condition                   = 'AlexNet_Context_84h_flip-lr-90-180-270-80c_ZIC-MSA_v-weight_test'
+    condition                   = 'my_awesome_selfsupervised_run'
     # Base for where a lot of files are kept or go such as network files
     caffe_data_dir              = project_home      + '/caffe_data/'
     # Where to save figures

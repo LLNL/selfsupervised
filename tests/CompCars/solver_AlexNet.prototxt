@@ -1,0 +1,23 @@
+net: 
+test_iter: 
+test_interval: 5000
+test_initialization: false
+
+base_lr: 0.01
+lr_policy: "poly"
+power: 0.5
+max_iter: 100000
+momentum: 0.9
+weight_decay: 0.0002
+
+
+display: 20
+
+snapshot: 5000
+snapshot_prefix: 
+
+solver_mode: GPU
+
+random_seed: 34234562302122  
+
+iter_size: 1

@@ -1,0 +1,2 @@
+/g/g17/mundhetn/data/CompCars/data/resize_crop_24_permutes.tgz
+/g/g17/mundhetn/data/CompCars/data/resize_int_crop.tgz

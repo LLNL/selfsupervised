@@ -1,2 +1,2 @@
-/g/g17/mundhetn/data/CompCars/data/resize_crop_24_permutes.tgz
-/g/g17/mundhetn/data/CompCars/data/resize_int_crop.tgz
+https://gdo-datasci.llnl.gov/selfsupervised/download/image_sets/compcars/resize_crop_24_permutes.tgz
+https://gdo-datasci.llnl.gov/selfsupervised/download/image_sets/compcars/resize_int_crop.tgz

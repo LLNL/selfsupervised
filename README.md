@@ -1,4 +1,4 @@
-## Lawrence Livermore National Lab Self Supervised Learning Repo
+## Lawrence Livermore National Lab :sunrise_over_mountains: Self Supervised Learning Repo
 This is source related to [our self-supervised paper](https://arxiv.org/abs/1711.06379) appearing in CVPR 2018. For more information take a look at the **Github Wiki page**. Just click on the [Wiki tab](https://github.com/LLNL/selfsupervised/wiki).
 ### What you Need
 These scripts are a wrapper around Caffe. So, you need Caffe. Once you've installed it, you will probably have everything you need to run this source. These include Caffe itself, Python 2.x :snake: , OpenCV, Numpy and Pyplot. 
@@ -30,7 +30,7 @@ This runs pretty straight forward. In https://gdo-datasci.llnl.gov/selfsupervise
 ### Design Concepts
 The source has several design choices which determine why certain things were done this way or that. 
 
-:one: The Python source wraps around Caffe rather than using python layers. This is because python layers in Caffe do not support multiple GPU execution. This allows us preprocess data and even use a multi
+:one: The Python source wraps around Caffe rather than using python layers. This is because python layers in Caffe do not support multiple GPU execution. This allows us preprocess data and even use a multi process prefetcher  to speed up image loading. 
 
-:two: We are running in a cluster environment. This is why it creates a project copy when you run it. This also keeps experiments in their own tidy folder. You can look beck to check how something actually ran. 
+:two: We are running in a cluster environment. This is why it creates a project copy when you run it. This also keeps experiments in their own tidy folder. You can look beck to check how something actually ran. This is also why we load raw images rather than an lmdb.  
 

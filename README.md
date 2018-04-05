@@ -1,4 +1,4 @@
-# selfsupervised
-Deep Learning Self-Supervised source code related to Mundenk et al. CVPR 2018
+# Lawrence Livermore National Lab Self Supervised Learning Repo
+This is source related to our self-supervised work appearing in CVPR 2018. For more information take a look at the Github Wiki page. Just click on the Wiki tab.  
 
-# We're still setting up this repo. Check back in about a week.
+

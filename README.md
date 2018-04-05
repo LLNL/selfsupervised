@@ -19,6 +19,7 @@ The source code will do the self-supervised training. The patches have been prep
 We have provided the Cub birds :hatched_chick: and Comp Cars :car: data processed as we used it. These are in: https://gdo-datasci.llnl.gov/selfsupervised/download/image_sets/ . The network models are in *caffe_data* named train_val_*network*_single.caffenet.  
 #### VOC Tests
 You should be able to plug the trained model into *Detection* and *Classification* tests without too much difficulty. 
+
 :one: Try classification with an initial learning rate of 0.000025
 
 :two: Try detection with an initial learning rate of 0.0005
@@ -28,6 +29,8 @@ You should be able to plug the trained model into *Detection* and *Classificatio
 This runs pretty straight forward. In https://gdo-datasci.llnl.gov/selfsupervised/download/models/caffenet/ is variant linear training network that uses CaffeNet. It also chops off calls to python layers so it can be run in multi GPU mode. Other than that, it's the same as the default model. 
 ### Design Concepts
 The source has several design choices which determine why certain things were done this way or that. 
+
 :one: The Python source wraps around Caffe rather than using python layers. This is because python layers in Caffe do not support multiple GPU execution. This allows us preprocess data and even use a multi
 
 :two: We are running in a cluster environment. This is why it creates a project copy when you run it. This also keeps experiments in their own tidy folder. You can look beck to check how something actually ran. 
+

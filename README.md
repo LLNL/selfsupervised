@@ -5,7 +5,7 @@ These scripts are a wrapper around Caffe. So, you need Caffe. Once you've instal
 ### What the Code Does
 The source code will do the self-supervised training. The patches have been preprocessed for you. You can take a peak in https://gdo-datasci.llnl.gov/selfsupervised/download/image_sets/patches/ . Here are patches with and without chroma blurring. The training and testing lists are in Numpy/Pickle format to save space. 
 ### How to Run
-:one: Edit **python/RunTripleContextTrain.py** and set paths in *project_home*, *path_prefix* and *gpus*. These are the only ones you must edit. Set *gpus* based on the number you want to run. In a single GPU environment, just set it to [1]. You can choose different network models that are in the *caffe_data* directory. Each one is named train_val_*network*_triple.caffenet. 
+:one: Edit **python/RunTripleContextTrain.py** and set paths in *project_home*, *path_prefix* and *gpus*. These are the only ones you must edit. Set *gpus* based on the number you want to run. In a single GPU environment, just set it to [1]. You can choose different network models that are in the *caffe_data* directory. Each one is named train_val_*network*_triple.caffenet. For comparison with our results in *tables 2,3 and 4* , the CaffeNet model is suitable to using to test on VOC and Linear tests. You should run the AlexNet-Custom network to compare with our CUB and CompCars results from *table 1*. You can use ResCeption and Inception networks to compare with *table 5*. 
 
 :two: Run **python/RunTripleContextTrain.py**. The first time you run it, it will create a copy in a project directory. If you are in a cluster environment, you can run the Slurm script instead. 
 
@@ -16,7 +16,7 @@ The source code will do the self-supervised training. The patches have been prep
 :five: The trained caffe models will be saved in py_proj/*my_project*/caffe_model
 ### How to Test
 #### CUB and CompCars
-We have provided the Cub birds :hatched_chick: and Comp Cars :car: data processed as we used it. These are in: https://gdo-datasci.llnl.gov/selfsupervised/download/image_sets/ . The network models are in *caffe_data* named train_val_*network*_single.caffenet.  
+We have provided the Cub birds :hatched_chick: and Comp Cars :car: data processed as we used it. These are in: https://gdo-datasci.llnl.gov/selfsupervised/download/image_sets/ . The network models are in *caffe_data* named train_val_*network*_single.caffenet.  You don't need python to run these. You can just use the direct Caffe command line. 
 #### VOC Tests
 You should be able to plug the trained model into *Detection* and *Classification* tests without too much difficulty. 
 
@@ -26,7 +26,7 @@ You should be able to plug the trained model into *Detection* and *Classificatio
 
 :three: Segmentation requires a few tweaks. We cannot transfer fc6 and fc7 via surgery. So we have to init them when we run segmentation. By default, the *fcn.berkeleyvision.org* would not init these layers. You still need to run surgery even though you are not transferring fc6 and fc7. You can download a model that does this from https://gdo-datasci.llnl.gov/selfsupervised/download/models/caffenet/ . Notice this also has a bunch of pretrained models you can try out.  
 #### Linear Tests
-This runs pretty straight forward. In https://gdo-datasci.llnl.gov/selfsupervised/download/models/caffenet/ is variant linear training network that uses CaffeNet. It also chops off calls to python layers so it can be run in multi GPU mode. Other than that, it's the same as the default model. 
+This runs pretty straight forward. In https://gdo-datasci.llnl.gov/selfsupervised/download/models/caffenet/ is variant linear training network that uses CaffeNet. It also chops off calls to python graphing layers so it can be run in multi GPU mode. Other than that, it's the same as the default model. 
 ### Design Concepts
 The source has several design choices which determine why certain things were done this way or that. 
 

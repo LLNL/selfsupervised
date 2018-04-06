@@ -24,7 +24,7 @@ You should be able to plug the trained model into *Detection* and *Classificatio
 
 :two: Try detection with an initial learning rate of 0.0005
 
-:three: Segmentation requires a few tweaks. We cannot transfer fc6 and fc7 via surgery. So we have to init them when we run segmentation. By default, the *fcn.berkeleyvision.org* would not init these layers. You still need to run surgery even though you are not transferring fc6 and fc7. You can download a model that does this from https://gdo-datasci.llnl.gov/selfsupervised/download/models/caffenet/ . Notice this also has a bunch of pretrained models you can try out.  
+:three: Segmentation requires a few tweaks. We cannot transfer fc6 and fc7 via surgery. So we have to init them when we run segmentation. By default, the *fcn.berkeleyvision.org* would not init these layers. You can download a model that does this from https://gdo-datasci.llnl.gov/selfsupervised/download/models/caffenet/ . Notice this also has a bunch of pretrained models you can try out.  You still need to run surgery even though you are not transferring fc6 and fc7. 
 #### Linear Tests
 This runs pretty straight forward. In https://gdo-datasci.llnl.gov/selfsupervised/download/models/caffenet/ is variant linear training network that uses CaffeNet. It also chops off calls to python graphing layers so it can be run in multi GPU mode. Other than that, it's the same as the default model. 
 ### Design Concepts
